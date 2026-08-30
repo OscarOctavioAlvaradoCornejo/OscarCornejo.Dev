@@ -1,6 +1,6 @@
 /**
  * CV WEB TECH MODERNO — Oscar Octavio Alvarado Cornejo
- * Script principal: Modo Oscuro/Claro, Cambio de Idioma (ES / EN), Contadores de Métricas, Filtros de Skills y Descarga a PDF
+ * Script principal: Modo Oscuro/Claro, Cambio de Idioma (ES / EN), Sidebar Scrollspy, Acordeón y Descarga Directa de PDFs
  */
 
 let currentLang = 'es';
@@ -8,9 +8,10 @@ let currentLang = 'es';
 document.addEventListener('DOMContentLoaded', () => {
   initLanguage();
   initTheme();
+  initSidebarScrollspy();
+  initCollapsibleExperience();
   initCounters();
-  initSkillsFilter();
-  initPrintActions();
+  initDownloadPdfActions();
   initCopyActions();
 });
 
@@ -21,7 +22,7 @@ function initLanguage() {
   const langToggle = document.getElementById('langToggle');
   const savedLang = localStorage.getItem('cv_lang');
   
-  // Idioma inicial (guardado o español por defecto)
+  // Idioma inicial
   currentLang = savedLang || 'es';
   applyLanguage(currentLang, false);
 
@@ -49,7 +50,7 @@ function applyLanguage(lang, showNotification = true) {
     }
   });
 
-  // Actualizar textos con formato HTML (etiquetas fuertes, pills, etc.)
+  // Actualizar textos con formato HTML
   document.querySelectorAll('[data-i18n-html]').forEach((el) => {
     const key = el.getAttribute('data-i18n-html');
     if (dict[key]) {
@@ -57,10 +58,18 @@ function applyLanguage(lang, showNotification = true) {
     }
   });
 
-  // Actualizar botón de idioma (indica al que cambiará al hacer click)
+  // Actualizar botón de idioma
   const langLabel = document.getElementById('currentLangLabel');
   if (langLabel) {
     langLabel.textContent = lang === 'es' ? 'EN' : 'ES';
+  }
+
+  // Actualizar botón maestro de acordeón
+  const allCollapsibles = document.querySelectorAll('.timeline-collapsible');
+  const allExpanded = Array.from(allCollapsibles).every(el => el.classList.contains('expanded'));
+  const expandAllText = document.getElementById('expandAllText');
+  if (expandAllText) {
+    expandAllText.textContent = allExpanded ? dict.btn_collapse_all : dict.btn_expand_all;
   }
 
   // Título de la pestaña
@@ -74,7 +83,153 @@ function applyLanguage(lang, showNotification = true) {
 }
 
 /* ==========================================================================
-   2. GESTOR DE TEMA (DARK / LIGHT MODE)
+   2. SCROLLSPY PARA EL ÍNDICE LATERAL (SIDEBAR)
+   ========================================================================== */
+function initSidebarScrollspy() {
+  const sections = document.querySelectorAll('header#hero, section#experiencia, section#habilidades, div#educacion, section#contacto');
+  const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+  if (!sections.length || !sidebarLinks.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        sidebarLinks.forEach((link) => {
+          if (link.getAttribute('data-target') === id) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+    });
+  }, {
+    rootMargin: '-20% 0px -60% 0px',
+    threshold: 0
+  });
+
+  sections.forEach((section) => observer.observe(section));
+
+  // Clic suave en enlaces de sidebar
+  sidebarLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('data-target');
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+}
+
+/* ==========================================================================
+   3. ACORDEÓN ULTRA-COMPACTO DE EXPERIENCIA
+   ========================================================================== */
+function initCollapsibleExperience() {
+  const headers = document.querySelectorAll('.compact-exp-header');
+  const expandAllBtn = document.getElementById('expandAllExpBtn');
+
+  headers.forEach((header) => {
+    header.addEventListener('click', () => {
+      const targetId = header.getAttribute('data-target');
+      const targetEl = document.getElementById(targetId);
+      if (!targetEl) return;
+
+      const isExpanded = targetEl.classList.contains('expanded');
+      
+      if (isExpanded) {
+        targetEl.classList.remove('expanded');
+        header.setAttribute('aria-expanded', 'false');
+      } else {
+        targetEl.classList.add('expanded');
+        header.setAttribute('aria-expanded', 'true');
+      }
+
+      checkMasterExpandButtonState();
+    });
+
+    // Accesibilidad por teclado (Enter / Espacio)
+    header.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        header.click();
+      }
+    });
+  });
+
+  // Botón maestro "Expandir Todo / Contraer Todo"
+  if (expandAllBtn) {
+    expandAllBtn.addEventListener('click', () => {
+      const allCollapsibles = document.querySelectorAll('.timeline-collapsible');
+      const allHeaders = document.querySelectorAll('.compact-exp-header');
+      
+      const allExpanded = Array.from(allCollapsibles).every(el => el.classList.contains('expanded'));
+      const shouldExpand = !allExpanded;
+
+      allCollapsibles.forEach(el => {
+        if (shouldExpand) {
+          el.classList.add('expanded');
+        } else {
+          el.classList.remove('expanded');
+        }
+      });
+
+      allHeaders.forEach(h => {
+        h.setAttribute('aria-expanded', shouldExpand ? 'true' : 'false');
+      });
+
+      updateMasterButtonLabel(shouldExpand);
+    });
+  }
+}
+
+function checkMasterExpandButtonState() {
+  const allCollapsibles = document.querySelectorAll('.timeline-collapsible');
+  const allExpanded = Array.from(allCollapsibles).every(el => el.classList.contains('expanded'));
+  updateMasterButtonLabel(allExpanded);
+}
+
+function updateMasterButtonLabel(allExpanded) {
+  const dict = translations[currentLang] || translations.es;
+  const expandAllText = document.getElementById('expandAllText');
+  if (expandAllText) {
+    expandAllText.textContent = allExpanded ? dict.btn_collapse_all : dict.btn_expand_all;
+  }
+}
+
+/* ==========================================================================
+   4. DESCARGA DIRECTA DE ARCHIVOS PDF (ESPAÑOL / INGLÉS)
+   ========================================================================== */
+function initDownloadPdfActions() {
+  const printCvBtn = document.getElementById('printCvBtn');
+  const ctaPrintBtn = document.getElementById('ctaPrintBtn');
+
+  const handleDownloadPdf = (e) => {
+    e.preventDefault();
+    const isSpanish = currentLang === 'es';
+    const pdfUrl = isSpanish ? 'assets/CV_Oscar_Alvarado_ES.pdf' : 'assets/CV_Oscar_Alvarado_EN.pdf';
+    const fileName = isSpanish ? 'CV_Oscar_Alvarado_ES.pdf' : 'CV_Oscar_Alvarado_EN.pdf';
+    
+    // Disparar descarga directa del archivo PDF
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    const dict = translations[currentLang] || translations.es;
+    showToast(dict.toast_download_pdf);
+  };
+
+  if (printCvBtn) printCvBtn.addEventListener('click', handleDownloadPdf);
+  if (ctaPrintBtn) ctaPrintBtn.addEventListener('click', handleDownloadPdf);
+}
+
+/* ==========================================================================
+   5. GESTOR DE TEMA (DARK / LIGHT MODE)
    ========================================================================== */
 function initTheme() {
   const themeToggle = document.getElementById('themeToggle');
@@ -104,7 +259,7 @@ function initTheme() {
 }
 
 /* ==========================================================================
-   3. CONTADORES ANIMADOS DE MÉTRICAS
+   6. CONTADORES ANIMADOS DE MÉTRICAS
    ========================================================================== */
 function initCounters() {
   const counters = document.querySelectorAll('.counter');
@@ -123,7 +278,6 @@ function initCounters() {
             const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / duration, 1);
             
-            // Curva easeOutExpo
             const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
             const currentValue = Math.floor(easeProgress * target);
 
@@ -140,7 +294,7 @@ function initCounters() {
         });
       }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.15 });
 
   const metricsSection = document.querySelector('.metrics-grid');
   if (metricsSection) {
@@ -149,58 +303,7 @@ function initCounters() {
 }
 
 /* ==========================================================================
-   4. FILTRADO INTERACTIVO DE HABILIDADES
-   ========================================================================== */
-function initSkillsFilter() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const skillCards = document.querySelectorAll('.skill-category-card');
-
-  filterButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      filterButtons.forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const filterValue = btn.getAttribute('data-filter');
-
-      skillCards.forEach((card) => {
-        const category = card.getAttribute('data-category');
-        if (filterValue === 'all' || category === filterValue) {
-          card.classList.remove('hidden');
-          card.style.opacity = '0';
-          card.style.transform = 'scale(0.96)';
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'scale(1)';
-          }, 50);
-        } else {
-          card.classList.add('hidden');
-        }
-      });
-    });
-  });
-}
-
-/* ==========================================================================
-   5. ACCIÓN DE DESCARGA / IMPRESIÓN DE PDF
-   ========================================================================== */
-function initPrintActions() {
-  const printCvBtn = document.getElementById('printCvBtn');
-  const ctaPrintBtn = document.getElementById('ctaPrintBtn');
-
-  const handlePrint = () => {
-    const dict = translations[currentLang] || translations.es;
-    showToast(dict.toast_pdf_prep);
-    setTimeout(() => {
-      window.print();
-    }, 300);
-  };
-
-  if (printCvBtn) printCvBtn.addEventListener('click', handlePrint);
-  if (ctaPrintBtn) ctaPrintBtn.addEventListener('click', handlePrint);
-}
-
-/* ==========================================================================
-   6. COPIADO AL PORTAPAPELES (EMAIL / TELÉFONO)
+   7. COPIADO AL PORTAPAPELES (EMAIL / TELÉFONO)
    ========================================================================== */
 function initCopyActions() {
   const copyEmailBtn = document.getElementById('copyEmailBtn');
@@ -219,7 +322,7 @@ function initCopyActions() {
 }
 
 /* ==========================================================================
-   7. TOAST NOTIFICACIÓN FLOTANTE
+   8. TOAST NOTIFICACIÓN FLOTANTE
    ========================================================================== */
 let toastTimeout;
 function showToast(message) {

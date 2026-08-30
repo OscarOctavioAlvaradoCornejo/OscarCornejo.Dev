@@ -33,7 +33,7 @@
     <div class="glow-orb orb-3"></div>
   </div>
 
-  <!-- Barra de Navegación / Controles Superiores -->
+  <!-- Barra de Navegación Superior -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#hero" class="nav-logo">
@@ -53,8 +53,8 @@
           <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
         </button>
 
-        <!-- Botón de Descargar PDF -->
-        <button id="printCvBtn" class="btn btn-primary btn-sm" title="Imprimir o guardar como PDF limpio">
+        <!-- Botón de Descargar PDF Oficial -->
+        <button id="printCvBtn" class="btn btn-primary btn-sm" title="Descargar archivo PDF oficial">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           <span data-i18n="nav_download_pdf">Descargar PDF</span>
         </button>
@@ -62,453 +62,533 @@
     </div>
   </nav>
 
-  <!-- Contenedor Principal del CV -->
-  <main class="main-wrapper" id="cv-content">
+  <!-- Layout Principal con Sidebar Izquierdo -->
+  <div class="layout-container">
 
-    <!-- SECCIÓN 1: HERO / PERFIL -->
-    <header class="hero-card glass-panel" id="hero">
-      <div class="hero-top-badge">
-        <span class="status-indicator"></span>
-        <span data-i18n="hero_status">Disponible para nuevos retos & proyectos</span>
-      </div>
-
-      <div class="hero-content">
-        <div class="hero-info">
-          <h1 class="hero-name">
-            <span data-i18n="hero_name_prefix">OSCAR OCTAVIO</span> 
-            <span class="gradient-text" data-i18n="hero_name_suffix">ALVARADO CORNEJO</span>
-          </h1>
-          <h2 class="hero-title" data-i18n="hero_title">Desarrollador Junior & Analista QA</h2>
-          
-          <div class="hero-meta">
-            <span class="meta-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span data-i18n="hero_location">León, Guanajuato, México</span>
-            </span>
-            <span class="meta-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-              <span data-i18n="hero_english">Inglés: Intermedio (B2)</span>
-            </span>
-            <span class="meta-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-              <span data-i18n="hero_career">Ing. en Desarrollo y Gestión de Software</span>
-            </span>
-          </div>
-
-          <p class="hero-summary" data-i18n-html="hero_summary">
-            Desarrollador Junior con sólida experiencia en control de calidad (QA) y desarrollo frontend con <strong>React 19, TypeScript y .NET 8 / Blazor WebAssembly</strong>. Actualmente colaborando en plataformas ERP en producción (CRM + gestión de proyectos). Enfoque integral que combina análisis funcional, desarrollo ágil bajo <strong>Scrum</strong>, automatización con <strong>Agentes IA (Copilot)</strong> y pruebas para clientes de alta exigencia como <strong>HDI Seguros</strong>.
-          </p>
-
-          <!-- Botones de Contacto / Enlaces Rápidos -->
-          <div class="hero-buttons">
-            <a href="mailto:oscarcornejo654@gmail.com" class="btn btn-primary" id="copyEmailBtn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              <span>oscarcornejo654@gmail.com</span>
+    <!-- ÍNDICE LATERAL FLOTANTE (IZQUIERDA) -->
+    <aside class="sidebar-nav" id="sidebarNav" aria-label="Índice de contenidos">
+      <div class="sidebar-inner glass-panel">
+        <span class="sidebar-badge">INDEX</span>
+        <ul class="sidebar-menu">
+          <li>
+            <a href="#hero" class="sidebar-link active" data-target="hero">
+              <span class="sidebar-num">01</span>
+              <span class="sidebar-text" data-i18n="nav_index_profile">Perfil</span>
             </a>
-
-            <a href="tel:4778652117" class="btn btn-secondary">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <span data-i18n="hero_phone">477-865-2117</span>
+          </li>
+          <li>
+            <a href="#experiencia" class="sidebar-link" data-target="experiencia">
+              <span class="sidebar-num">02</span>
+              <span class="sidebar-text" data-i18n="nav_index_exp">Experiencia</span>
             </a>
-
-            <!-- Redes sociales / Enlaces externos -->
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" title="Ver perfil de GitHub" aria-label="GitHub">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              <span>GitHub</span>
+          </li>
+          <li>
+            <a href="#habilidades" class="sidebar-link" data-target="habilidades">
+              <span class="sidebar-num">03</span>
+              <span class="sidebar-text" data-i18n="nav_index_skills">Habilidades</span>
             </a>
-
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" title="Ver perfil de LinkedIn" aria-label="LinkedIn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-              <span>LinkedIn</span>
+          </li>
+          <li>
+            <a href="#educacion" class="sidebar-link" data-target="educacion">
+              <span class="sidebar-num">04</span>
+              <span class="sidebar-text" data-i18n="nav_index_edu">Educación</span>
             </a>
-          </div>
+          </li>
+          <li>
+            <a href="#contacto" class="sidebar-link" data-target="contacto">
+              <span class="sidebar-num">05</span>
+              <span class="sidebar-text" data-i18n="nav_index_contact">Contacto</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Contenido Principal del CV -->
+    <main class="main-wrapper" id="cv-content">
+
+      <!-- SECCIÓN 1: HERO / PERFIL -->
+      <header class="hero-card glass-panel" id="hero">
+        <div class="hero-top-badge">
+          <span class="status-indicator"></span>
+          <span data-i18n="hero_status">Disponible para nuevos retos & proyectos</span>
         </div>
 
-        <!-- Avatar / Foto de Perfil con efecto Glow -->
-        <div class="hero-avatar-wrapper">
-          <div class="avatar-glow"></div>
-          <div class="avatar-container">
-            <img src="assets/profile.jpg" alt="Oscar Octavio Alvarado Cornejo" class="avatar-img" />
-            <div class="avatar-badge">
-              <span class="code-tag">&lt;/&gt;</span>
+        <div class="hero-content">
+          <div class="hero-info">
+            <h1 class="hero-name">
+              <span data-i18n="hero_name_prefix">OSCAR OCTAVIO</span> 
+              <span class="gradient-text" data-i18n="hero_name_suffix">ALVARADO CORNEJO</span>
+            </h1>
+            <h2 class="hero-title" data-i18n="hero_title">Desarrollador Junior & Analista QA</h2>
+            
+            <div class="hero-meta">
+              <span class="meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span data-i18n="hero_location">León, Guanajuato, México</span>
+              </span>
+              <span class="meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <span data-i18n="hero_english">Inglés: Intermedio (B2)</span>
+              </span>
+              <span class="meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                <span data-i18n="hero_career">Ing. en Desarrollo y Gestión de Software</span>
+              </span>
             </div>
-          </div>
-        </div>
-      </div>
-    </header>
 
-    <!-- SECCIÓN 2: MÉTRICAS DE IMPACTO (ANIMADAS) -->
-    <section class="metrics-grid">
-      <div class="metric-card glass-panel">
-        <div class="metric-icon-box">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <div class="metric-number"><span class="counter" data-target="200">0</span>+</div>
-        <div class="metric-label" data-i18n="metric_users_label">Usuarios Activos en Timesheet (.NET 8 & Blazor)</div>
-      </div>
+            <p class="hero-summary" data-i18n-html="hero_summary">
+              Desarrollador Junior con sólida experiencia en control de calidad (QA) y desarrollo frontend con <strong>React 19, TypeScript y .NET 8 / Blazor WebAssembly</strong>. Actualmente colaborando en plataformas ERP en producción (CRM + gestión de proyectos). Enfoque integral que combina análisis funcional, desarrollo ágil bajo <strong>Scrum</strong>, automatización con <strong>Agentes IA (Copilot)</strong> y pruebas para clientes de alta exigencia como <strong>HDI Seguros</strong>.
+            </p>
 
-      <div class="metric-card glass-panel">
-        <div class="metric-icon-box">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-        </div>
-        <div class="metric-number"><span class="counter" data-target="1500">0</span>+</div>
-        <div class="metric-label" data-i18n="metric_tests_label">Casos de Prueba Diseñados (HDI Seguros)</div>
-      </div>
+            <!-- Botones de Contacto / Enlaces Rápidos -->
+            <div class="hero-buttons">
+              <a href="mailto:oscarcornejo654@gmail.com" class="btn btn-primary" id="copyEmailBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                <span>oscarcornejo654@gmail.com</span>
+              </a>
 
-      <div class="metric-card glass-panel">
-        <div class="metric-icon-box">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 2 1.88 1.88"/><path d="M14.12 3.88 16 2"/><path d="M9 7.13v-1a3.003 3.003 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6"/><path d="M12 20v-9"/><path d="M6.53 9C4.6 8.8 3 7.1 3 5"/><path d="M6 13H2"/><path d="M3 21c0-2.1 1.7-3.9 3.8-4"/><path d="M20.97 5c0 2.1-1.6 3.8-3.5 4"/><path d="M22 13h-4"/><path d="M17.2 17c2.1.1 3.8 1.9 3.8 4"/></svg>
-        </div>
-        <div class="metric-number"><span class="counter" data-target="30">0</span>+</div>
-        <div class="metric-label" data-i18n="metric_bugs_qa_label">Bugs Reportados & Validados en QA</div>
-      </div>
+              <a href="tel:4778652117" class="btn btn-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span data-i18n="hero_phone">477-865-2117</span>
+              </a>
 
-      <div class="metric-card glass-panel">
-        <div class="metric-icon-box">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-        </div>
-        <div class="metric-number"><span class="counter" data-target="10">0</span>+</div>
-        <div class="metric-label" data-i18n="metric_bugs_crm_label">Bugs Críticos Resueltos en CRM (React 19)</div>
-      </div>
-    </section>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" title="Ver perfil de GitHub" aria-label="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub</span>
+              </a>
 
-    <!-- SECCIÓN 3: EXPERIENCIA PROFESIONAL -->
-    <section class="content-section" id="experiencia">
-      <div class="section-header">
-        <div class="section-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-        </div>
-        <h2 class="section-title" data-i18n="section_experience">Experiencia Profesional</h2>
-      </div>
-
-      <div class="timeline">
-
-        <!-- Experiencia 1: Analista QA / Desarrollador -->
-        <article class="timeline-item glass-panel">
-          <div class="timeline-dot"></div>
-          <div class="timeline-header">
-            <div class="role-group">
-              <h3 class="role-title" data-i18n="exp1_title">Analista QA / Desarrollador</h3>
-              <span class="company-name" data-i18n="exp1_company">KSP Technologies</span>
-            </div>
-            <div class="timeline-badge-group">
-              <span class="badge badge-primary" data-i18n="exp1_date">Febrero 2026 – Actualidad</span>
-              <span class="badge badge-secondary" data-i18n="exp1_type">Remoto</span>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" title="Ver perfil de LinkedIn" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>LinkedIn</span>
+              </a>
             </div>
           </div>
 
-          <div class="timeline-body">
-            <ul class="achievements-list">
-              <li data-i18n-html="exp1_b1">
-                <strong>KSP Workspace (ERP & CRM):</strong> Resolvió al menos <span class="highlight-tag">10 bugs críticos</span> en la plataforma ERP unificada de CRM y gestión de proyectos desarrollada con <span class="code-pill">React 19</span>, <span class="code-pill">TypeScript</span>, <span class="code-pill">Vite</span> y <span class="code-pill">React Router</span>, optimizando la estabilidad del módulo CRM en producción.
-              </li>
-              <li data-i18n-html="exp1_b2">
-                <strong>Gestión Ágil & Pruebas:</strong> Atendió 4 historias de usuario y ejecutó entre 16 y 20 tareas de análisis técnico, pruebas funcionales exhaustivas y validación de software.
-              </li>
-              <li data-i18n-html="exp1_b3">
-                <strong>Sistema Timesheet (.NET 8 & Blazor):</strong> Desarrolló e implementó de inicio a fin el sistema "Timesheet" con arquitectura <span class="code-pill">.NET 8</span>, <span class="code-pill">Blazor WebAssembly</span> y <span class="code-pill">SQL Server</span>, adoptado exitosamente por más de <span class="highlight-tag">200 usuarios</span> para el registro y auditoría de horas extra.
-              </li>
-              <li data-i18n-html="exp1_b4">
-                <strong>Colaboración con HDI Seguros (Proyecto Colectividades):</strong> Participó en la generación de más de <strong>1,500 casos de prueba</strong>, ejecutando más de 300 matrices de prueba e identificando/reportando al menos 30 defectos críticos.
-              </li>
-              <li data-i18n-html="exp1_b5">
-                <strong>DevOps & Agentes IA:</strong> Control de ciclo de vida con <span class="code-pill">GitHub</span> y <span class="code-pill">Azure DevOps</span>, integrando flujos con <strong>Agentes IA de Microsoft Copilot</strong> para acelerar el análisis y desarrollo.
-              </li>
-            </ul>
-
-            <div class="tech-tags-group">
-              <span class="tag">React 19</span>
-              <span class="tag">TypeScript</span>
-              <span class="tag">Vite</span>
-              <span class="tag">.NET 8</span>
-              <span class="tag">Blazor WASM</span>
-              <span class="tag">SQL Server</span>
-              <span class="tag">Azure DevOps</span>
-              <span class="tag">Copilot AI</span>
-              <span class="tag">Scrum</span>
+          <!-- Avatar / Foto de Perfil con efecto Glow -->
+          <div class="hero-avatar-wrapper">
+            <div class="avatar-glow"></div>
+            <div class="avatar-container">
+              <img src="assets/profile.jpg" alt="Oscar Octavio Alvarado Cornejo" class="avatar-img" />
+              <div class="avatar-badge">
+                <span class="code-tag">&lt;/&gt;</span>
+              </div>
             </div>
           </div>
-        </article>
-
-        <!-- Experiencia 2: Becario Analista de TI - KSP -->
-        <article class="timeline-item glass-panel">
-          <div class="timeline-dot"></div>
-          <div class="timeline-header">
-            <div class="role-group">
-              <h3 class="role-title" data-i18n="exp2_title">Becario Analista de TI</h3>
-              <span class="company-name" data-i18n="exp2_company">KSP Technologies</span>
-            </div>
-            <div class="timeline-badge-group">
-              <span class="badge badge-neutral" data-i18n="exp2_date">Marzo 2025 – Febrero 2026</span>
-              <span class="badge badge-secondary" data-i18n="exp2_type">Presencial · Jornada Parcial</span>
-            </div>
-          </div>
-
-          <div class="timeline-body">
-            <ul class="achievements-list">
-              <li data-i18n="exp2_b1">
-                Desarrolló documentación técnica y funcional para el análisis de proyectos de TI empresariales.
-              </li>
-              <li data-i18n="exp2_b2">
-                Sentó las bases de la base de conocimiento y arquitectura del producto, logrando una transición sobresaliente al rol titular de Analista QA / Desarrollador.
-              </li>
-            </ul>
-
-            <div class="tech-tags-group">
-              <span class="tag">Documentación Técnica</span>
-              <span class="tag">Análisis de Requerimientos</span>
-              <span class="tag">UML</span>
-              <span class="tag">Scrum</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Experiencia 3: Becario Analista de TI - Municipio de León -->
-        <article class="timeline-item glass-panel">
-          <div class="timeline-dot"></div>
-          <div class="timeline-header">
-            <div class="role-group">
-              <h3 class="role-title" data-i18n="exp3_title">Becario Analista de TI</h3>
-              <span class="company-name" data-i18n="exp3_company">Municipio de León (Dirección de Tecnologías de la Información)</span>
-            </div>
-            <div class="timeline-badge-group">
-              <span class="badge badge-neutral" data-i18n="exp3_date">Mayo 2024 – Agosto 2024</span>
-              <span class="badge badge-secondary" data-i18n="exp3_type">Presencial · 4 meses</span>
-            </div>
-          </div>
-
-          <div class="timeline-body">
-            <ul class="achievements-list">
-              <li data-i18n="exp3_b1">
-                Elaboró diagramas y documentos integrales de análisis: planes de trabajo, matrices de riesgos, matrices de requerimientos, WBS (Estructura de Desglose de Trabajo) y especificación formal de Casos de Uso.
-              </li>
-              <li data-i18n-html="exp3_b2">
-                Realizó el análisis detallado de requerimientos técnicos, legales y fiscales vinculados a la emisión y cancelación del esquema <span class="highlight-tag">CFDI 4.0</span>, asegurando el cumplimiento institucional.
-              </li>
-            </ul>
-
-            <div class="tech-tags-group">
-              <span class="tag">CFDI 4.0</span>
-              <span class="tag">WBS</span>
-              <span class="tag">Matriz de Riesgos</span>
-              <span class="tag">Casos de Uso</span>
-              <span class="tag">Gestión de Proyectos</span>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- SECCIÓN 4: HABILIDADES TÉCNICAS (CON FILTROS INTERACTIVOS) -->
-    <section class="content-section" id="habilidades">
-      <div class="section-header">
-        <div class="section-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
         </div>
-        <h2 class="section-title" data-i18n="section_skills">Habilidades Técnicas</h2>
-      </div>
+      </header>
 
-      <!-- Filtros de Skills interactivos -->
-      <div class="skills-filter-bar" id="skillsFilterBar">
-        <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Todas</button>
-        <button class="filter-btn" data-filter="frontend" data-i18n="filter_frontend">Frontend</button>
-        <button class="filter-btn" data-filter="backend" data-i18n="filter_backend">Backend & Lenguajes</button>
-        <button class="filter-btn" data-filter="database" data-i18n="filter_database">Bases de Datos</button>
-        <button class="filter-btn" data-filter="tools" data-i18n="filter_tools">DevOps & Herramientas</button>
-        <button class="filter-btn" data-filter="qa" data-i18n="filter_qa">QA & Metodologías</button>
-      </div>
-
-      <div class="skills-cards-grid">
-        
-        <!-- Categoría: Frontend -->
-        <div class="skill-category-card glass-panel" data-category="frontend">
-          <div class="skill-cat-header">
-            <span class="cat-pill" data-i18n="cat_frontend">Frontend Moderno</span>
+      <!-- SECCIÓN 2: MÉTRICAS DE IMPACTO COMPACTAS -->
+      <section class="metrics-grid">
+        <div class="metric-card glass-panel">
+          <div class="metric-icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <div class="skill-pills-list">
-            <div class="skill-chip"><span class="chip-dot"></span>React 19</div>
-            <div class="skill-chip"><span class="chip-dot"></span>TypeScript</div>
-            <div class="skill-chip"><span class="chip-dot"></span>Vite</div>
-            <div class="skill-chip"><span class="chip-dot"></span>React Router 6</div>
-            <div class="skill-chip"><span class="chip-dot"></span>TanStack Query</div>
-            <div class="skill-chip"><span class="chip-dot"></span>Zustand</div>
-            <div class="skill-chip"><span class="chip-dot"></span>React Hook Form + Zod</div>
-            <div class="skill-chip"><span class="chip-dot"></span>CSS Modules / Tailwind</div>
-            <div class="skill-chip"><span class="chip-dot"></span>Axios / Fetch API</div>
-            <div class="skill-chip"><span class="chip-dot"></span>HTML5 Semántico / CSS3</div>
-            <div class="skill-chip"><span class="chip-dot"></span>Bootstrap</div>
-          </div>
+          <div class="metric-number"><span class="counter" data-target="200">0</span>+</div>
+          <div class="metric-label" data-i18n="metric_users_label">Usuarios en Timesheet (.NET 8)</div>
         </div>
 
-        <!-- Categoría: Backend & Lenguajes -->
-        <div class="skill-category-card glass-panel" data-category="backend">
-          <div class="skill-cat-header">
-            <span class="cat-pill" data-i18n="cat_backend">Backend & Lenguajes</span>
+        <div class="metric-card glass-panel">
+          <div class="metric-icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
           </div>
-          <div class="skill-pills-list">
-            <div class="skill-chip"><span class="chip-dot"></span>C# (.NET 8)</div>
-            <div class="skill-chip"><span class="chip-dot"></span>Blazor WebAssembly</div>
-            <div class="skill-chip"><span class="chip-dot"></span>JavaScript (ES6+)</div>
-            <div class="skill-chip"><span class="chip-dot"></span>Python</div>
-            <div class="skill-chip"><span class="chip-dot"></span>Java</div>
-            <div class="skill-chip"><span class="chip-dot"></span>Kotlin</div>
-            <div class="skill-chip"><span class="chip-dot"></span>Flask</div>
-            <div class="skill-chip"><span class="chip-dot"></span>Django (Principios)</div>
-            <div class="skill-chip"><span class="chip-dot"></span>JWT (Autenticación)</div>
-            <div class="skill-chip"><span class="chip-dot"></span>XML / JSON APIs</div>
-          </div>
+          <div class="metric-number"><span class="counter" data-target="1500">0</span>+</div>
+          <div class="metric-label" data-i18n="metric_tests_label">Casos de Prueba (HDI Seguros)</div>
         </div>
 
-        <!-- Categoría: Bases de Datos -->
-        <div class="skill-category-card glass-panel" data-category="database">
-          <div class="skill-cat-header">
-            <span class="cat-pill" data-i18n="cat_database">Bases de Datos</span>
+        <div class="metric-card glass-panel">
+          <div class="metric-icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 2 1.88 1.88"/><path d="M14.12 3.88 16 2"/><path d="M9 7.13v-1a3.003 3.003 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6"/><path d="M12 20v-9"/><path d="M6.53 9C4.6 8.8 3 7.1 3 5"/><path d="M6 13H2"/><path d="M3 21c0-2.1 1.7-3.9 3.8-4"/><path d="M20.97 5c0 2.1-1.6 3.8-3.5 4"/><path d="M22 13h-4"/><path d="M17.2 17c2.1.1 3.8 1.9 3.8 4"/></svg>
           </div>
-          <div class="skill-pills-list">
-            <div class="skill-chip"><span class="chip-dot"></span>Microsoft SQL Server</div>
-            <div class="skill-chip"><span class="chip-dot"></span>MySQL</div>
-            <div class="skill-chip"><span class="chip-dot"></span>MongoDB</div>
-            <div class="skill-chip"><span class="chip-dot"></span>CouchDB</div>
-          </div>
+          <div class="metric-number"><span class="counter" data-target="30">0</span>+</div>
+          <div class="metric-label" data-i18n="metric_bugs_qa_label">Bugs Validados en QA</div>
         </div>
 
-        <!-- Categoría: DevOps & Herramientas -->
-        <div class="skill-category-card glass-panel" data-category="tools">
-          <div class="skill-cat-header">
-            <span class="cat-pill" data-i18n="cat_tools">DevOps & Herramientas</span>
+        <div class="metric-card glass-panel">
+          <div class="metric-icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
           </div>
-          <div class="skill-pills-list">
-            <div class="skill-chip"><span class="chip-dot"></span>Git & GitHub</div>
-            <div class="skill-chip"><span class="chip-dot"></span>Azure DevOps</div>
-            <div class="skill-chip"><span class="chip-dot"></span>Microsoft Copilot (Agentes IA)</div>
-            <div class="skill-chip"><span class="chip-dot"></span>Modelado Diagramas UML</div>
-            <div class="skill-chip"><span class="chip-dot"></span>VS Code / Visual Studio</div>
-            <div class="skill-chip"><span class="chip-dot"></span>Postman</div>
-          </div>
-        </div>
-
-        <!-- Categoría: QA & Metodologías -->
-        <div class="skill-category-card glass-panel" data-category="qa">
-          <div class="skill-cat-header">
-            <span class="cat-pill" data-i18n="cat_qa">QA & Metodologías</span>
-          </div>
-          <div class="skill-pills-list">
-            <div class="skill-chip"><span class="chip-dot"></span>Metodología Scrum / Ágil</div>
-            <div class="skill-chip"><span class="chip-dot"></span>Pruebas Funcionales QA</div>
-            <div class="skill-chip"><span class="chip-dot"></span>Diseño de Matrices de Prueba</div>
-            <div class="skill-chip"><span class="chip-dot"></span>Historias de Usuario</div>
-            <div class="skill-chip"><span class="chip-dot"></span>Detección y Reporte de Bugs</div>
-            <div class="skill-chip"><span class="chip-dot"></span>CFDI 4.0 Compliance</div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SECCIÓN 5: FORMACIÓN ACADÉMICA & CURSOS (2 COLUMNAS) -->
-    <div class="grid-2-col">
-      
-      <!-- Columna 1: Educación -->
-      <section class="content-section" id="educacion">
-        <div class="section-header">
-          <div class="section-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-          </div>
-          <h2 class="section-title" data-i18n="section_education">Educación</h2>
-        </div>
-
-        <div class="education-cards">
-          <!-- Grado 1 -->
-          <div class="edu-card glass-panel">
-            <div class="edu-year" data-i18n="edu1_year">Agosto 2024 – Abril 2026 (En curso)</div>
-            <h3 class="edu-degree" data-i18n="edu1_degree">Ingeniería en Desarrollo y Gestión de Software</h3>
-            <div class="edu-school" data-i18n="edu1_school">Universidad Tecnológica de León</div>
-          </div>
-
-          <!-- Grado 2 -->
-          <div class="edu-card glass-panel">
-            <div class="edu-year" data-i18n="edu2_year">Septiembre 2022 – Julio 2024</div>
-            <h3 class="edu-degree" data-i18n="edu2_degree">Técnico Superior Universitario en Desarrollo de Software Multiplataforma</h3>
-            <div class="edu-school" data-i18n="edu2_school">Universidad Tecnológica de León</div>
-          </div>
-
-          <!-- Grado 3 -->
-          <div class="edu-card glass-panel">
-            <div class="edu-year" data-i18n="edu3_year">2019 – 2022</div>
-            <h3 class="edu-degree" data-i18n="edu3_degree">Bachillerato Tecnológico en Programación</h3>
-            <div class="edu-school" data-i18n="edu3_school">CBTIS 225</div>
-          </div>
+          <div class="metric-number"><span class="counter" data-target="10">0</span>+</div>
+          <div class="metric-label" data-i18n="metric_bugs_crm_label">Bugs Resueltos en CRM</div>
         </div>
       </section>
 
-      <!-- Columna 2: Cursos, Idiomas & Aptitudes -->
-      <section class="content-section" id="cursos">
-        <div class="section-header">
-          <div class="section-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-          </div>
-          <h2 class="section-title" data-i18n="section_courses">Cursos & Certificaciones</h2>
-        </div>
-
-        <div class="cert-list">
-          <div class="cert-card glass-panel">
-            <div class="cert-title" data-i18n="cert1_title">Curso de Redes Cisco CCNA V1 & CCNA V2</div>
-            <p class="cert-desc" data-i18n="cert1_desc">Solución de problemas de conectividad, topologías y configuración de redundancia en redes.</p>
-          </div>
-
-          <div class="cert-card glass-panel">
-            <div class="cert-title" data-i18n="cert2_title">Curso de Metodología de Trabajo SCRUM</div>
-            <p class="cert-desc" data-i18n="cert2_desc">Marco ágil para gestión integral y entrega iterativa de proyectos de software.</p>
-          </div>
-
-          <div class="cert-card glass-panel">
-            <div class="cert-title" data-i18n="cert3_title">Idioma: Inglés (Nivel Intermedio B2)</div>
-            <p class="cert-desc" data-i18n="cert3_desc">Capacidad para mantener conversaciones técnicas, lectura de documentación y redacción funcional.</p>
-          </div>
-
-          <!-- Aptitudes Blandas -->
-          <div class="soft-skills-card glass-panel">
-            <div class="soft-title" data-i18n="soft_title">Aptitudes & Valores</div>
-            <div class="soft-tags">
-              <span class="soft-pill" data-i18n="soft_1">Trabajo en Equipo</span>
-              <span class="soft-pill" data-i18n="soft_2">Capacidad de Escucha Activa</span>
-              <span class="soft-pill" data-i18n="soft_3">Trato Amable y Cercano</span>
-              <span class="soft-pill" data-i18n="soft_4">Iniciativa y Proactividad</span>
-              <span class="soft-pill" data-i18n="soft_5">Resolución de Problemas</span>
+      <!-- SECCIÓN 3: EXPERIENCIA PROFESIONAL (ULTRA-COMPACTA / LISTA MINIMALISTA) -->
+      <section class="content-section" id="experiencia">
+        <div class="section-header section-header-with-actions">
+          <div class="section-title-wrapper">
+            <div class="section-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
             </div>
+            <h2 class="section-title" data-i18n="section_experience">Experiencia Profesional</h2>
           </div>
-        </div>
-      </section>
-
-    </div>
-
-    <!-- SECCIÓN 6: CALL TO ACTION / CONTACTO -->
-    <section class="cta-section glass-panel">
-      <div class="cta-content">
-        <h2 class="cta-title" data-i18n="cta_title">¿Interesado en colaborar o contratar?</h2>
-        <p class="cta-subtitle" data-i18n="cta_subtitle">Estoy listo para sumarme a tu equipo de desarrollo o control de calidad y aportar valor desde el primer día.</p>
-        
-        <div class="cta-actions">
-          <a href="mailto:oscarcornejo654@gmail.com" class="btn btn-primary btn-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            <span data-i18n="cta_btn_email">Enviar Correo Electrónico</span>
-          </a>
-          <button id="ctaPrintBtn" class="btn btn-secondary btn-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span data-i18n="cta_btn_pdf">Descargar CV en PDF</span>
+          <button id="expandAllExpBtn" class="btn btn-sm btn-ghost-tech" title="Expandir o contraer todas las experiencias">
+            <svg class="toggle-all-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+            <span id="expandAllText" data-i18n="btn_expand_all">Expandir Todo</span>
           </button>
         </div>
+
+        <div class="timeline-compact-list">
+
+          <!-- Experiencia 1: Analista QA / Desarrollador (Cerrado por defecto en 1 fila) -->
+          <article class="compact-exp-card glass-panel" id="exp-card-1">
+            <div class="compact-exp-header" data-target="exp-details-1" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-details-1">
+              <div class="compact-exp-left">
+                <span class="exp-dot"></span>
+                <div class="exp-titles">
+                  <h3 class="role-title" data-i18n="exp1_title">Analista QA / Desarrollador</h3>
+                  <span class="company-name" data-i18n="exp1_company">KSP Technologies</span>
+                </div>
+              </div>
+
+              <div class="compact-exp-right">
+                <span class="badge badge-primary" data-i18n="exp1_date">Feb 2026 – Actualidad</span>
+                <span class="badge badge-secondary" data-i18n="exp1_type">Remoto</span>
+                <span class="exp-chevron">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </span>
+              </div>
+            </div>
+
+            <!-- Contenedor Desplegable -->
+            <div class="timeline-collapsible" id="exp-details-1">
+              <div class="timeline-collapsible-inner">
+                <p class="timeline-summary" data-i18n-html="exp1_summary">
+                  Desarrollo frontend en <span class="code-pill">React 19 / TypeScript</span> para ERP CRM y creación integral del sistema Timesheet en <span class="code-pill">.NET 8 / Blazor</span> con más de 200 usuarios activos y pruebas de software para HDI Seguros.
+                </p>
+
+                <div class="tech-tags-group">
+                  <span class="tag">React 19</span>
+                  <span class="tag">TypeScript</span>
+                  <span class="tag">Vite</span>
+                  <span class="tag">.NET 8</span>
+                  <span class="tag">Blazor WASM</span>
+                  <span class="tag">SQL Server</span>
+                  <span class="tag">Azure DevOps</span>
+                  <span class="tag">Copilot AI</span>
+                  <span class="tag">Scrum</span>
+                </div>
+
+                <ul class="achievements-list">
+                  <li data-i18n-html="exp1_b1">
+                    <strong>KSP Workspace (ERP & CRM):</strong> Resolvió al menos <span class="highlight-tag">10 bugs críticos</span> en la plataforma ERP unificada de CRM y gestión de proyectos desarrollada con <span class="code-pill">React 19</span>, <span class="code-pill">TypeScript</span>, <span class="code-pill">Vite</span> y <span class="code-pill">React Router</span>, optimizando la estabilidad del módulo CRM en producción.
+                  </li>
+                  <li data-i18n-html="exp1_b2">
+                    <strong>Gestión Ágil & Pruebas:</strong> Atendió 4 historias de usuario y ejecutó entre 16 y 20 tareas de análisis técnico, pruebas funcionales exhaustivas y validación de software.
+                  </li>
+                  <li data-i18n-html="exp1_b3">
+                    <strong>Sistema Timesheet (.NET 8 & Blazor):</strong> Desarrolló e implementó de inicio a fin el sistema "Timesheet" con arquitectura <span class="code-pill">.NET 8</span>, <span class="code-pill">Blazor WebAssembly</span> y <span class="code-pill">SQL Server</span>, adoptado exitosamente por más de <span class="highlight-tag">200 usuarios</span> para el registro y auditoría de horas extra.
+                  </li>
+                  <li data-i18n-html="exp1_b4">
+                    <strong>Colaboración con HDI Seguros (Proyecto Colectividades):</strong> Participó en la generación de más de <strong>1,500 casos de prueba</strong>, ejecutando más de 300 matrices de prueba e identificando/reportando al menos 30 defectos críticos.
+                  </li>
+                  <li data-i18n-html="exp1_b5">
+                    <strong>DevOps & Agentes IA:</strong> Control de ciclo de vida con <span class="code-pill">GitHub</span> y <span class="code-pill">Azure DevOps</span>, integrando flujos con <strong>Agentes IA de Microsoft Copilot</strong> para acelerar el análisis y desarrollo.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Experiencia 2: Becario Analista de TI - KSP (Cerrado por defecto en 1 fila) -->
+          <article class="compact-exp-card glass-panel" id="exp-card-2">
+            <div class="compact-exp-header" data-target="exp-details-2" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-details-2">
+              <div class="compact-exp-left">
+                <span class="exp-dot"></span>
+                <div class="exp-titles">
+                  <h3 class="role-title" data-i18n="exp2_title">Becario Analista de TI</h3>
+                  <span class="company-name" data-i18n="exp2_company">KSP Technologies</span>
+                </div>
+              </div>
+
+              <div class="compact-exp-right">
+                <span class="badge badge-neutral" data-i18n="exp2_date">Mar 2025 – Feb 2026</span>
+                <span class="badge badge-secondary" data-i18n="exp2_type">Presencial · Parcial</span>
+                <span class="exp-chevron">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </span>
+              </div>
+            </div>
+
+            <!-- Contenedor Desplegable -->
+            <div class="timeline-collapsible" id="exp-details-2">
+              <div class="timeline-collapsible-inner">
+                <p class="timeline-summary" data-i18n-html="exp2_summary">
+                  Desarrollo de documentación técnica, análisis funcional y arquitectura base para proyectos de software empresarial.
+                </p>
+
+                <div class="tech-tags-group">
+                  <span class="tag">Documentación Técnica</span>
+                  <span class="tag">Análisis de Requerimientos</span>
+                  <span class="tag">UML</span>
+                  <span class="tag">Scrum</span>
+                </div>
+
+                <ul class="achievements-list">
+                  <li data-i18n="exp2_b1">
+                    Desarrolló documentación técnica y funcional para el análisis de proyectos de TI empresariales.
+                  </li>
+                  <li data-i18n="exp2_b2">
+                    Sentó las bases de la base de conocimiento y arquitectura del producto, logrando una transición sobresaliente al rol titular de Analista QA / Desarrollador.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Experiencia 3: Becario Analista de TI - Municipio de León (Cerrado por defecto en 1 fila) -->
+          <article class="compact-exp-card glass-panel" id="exp-card-3">
+            <div class="compact-exp-header" data-target="exp-details-3" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-details-3">
+              <div class="compact-exp-left">
+                <span class="exp-dot"></span>
+                <div class="exp-titles">
+                  <h3 class="role-title" data-i18n="exp3_title">Becario Analista de TI</h3>
+                  <span class="company-name" data-i18n="exp3_company">Municipio de León (Dirección de TI)</span>
+                </div>
+              </div>
+
+              <div class="compact-exp-right">
+                <span class="badge badge-neutral" data-i18n="exp3_date">May 2024 – Ago 2024</span>
+                <span class="badge badge-secondary" data-i18n="exp3_type">Presencial · 4 meses</span>
+                <span class="exp-chevron">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </span>
+              </div>
+            </div>
+
+            <!-- Contenedor Desplegable -->
+            <div class="timeline-collapsible" id="exp-details-3">
+              <div class="timeline-collapsible-inner">
+                <p class="timeline-summary" data-i18n-html="exp3_summary">
+                  Elaboración de matrices de riesgos, WBS, especificación formal de casos de uso y análisis normativo de CFDI 4.0.
+                </p>
+
+                <div class="tech-tags-group">
+                  <span class="tag">CFDI 4.0</span>
+                  <span class="tag">WBS</span>
+                  <span class="tag">Matriz de Riesgos</span>
+                  <span class="tag">Casos de Uso</span>
+                  <span class="tag">Gestión de Proyectos</span>
+                </div>
+
+                <ul class="achievements-list">
+                  <li data-i18n="exp3_b1">
+                    Elaboró diagramas y documentos integrales de análisis: planes de trabajo, matrices de riesgos, matrices de requerimientos, WBS (Estructura de Desglose de Trabajo) y especificación formal de Casos de Uso.
+                  </li>
+                  <li data-i18n-html="exp3_b2">
+                    Realizó el análisis detallado de requerimientos técnicos, legales y fiscales vinculados a la emisión y cancelación del esquema <span class="highlight-tag">CFDI 4.0</span>, asegurando el cumplimiento institucional.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- SECCIÓN 4: HABILIDADES TÉCNICAS (BENTO GRID COMPACTO) -->
+      <section class="content-section" id="habilidades">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <h2 class="section-title" data-i18n="section_skills">Habilidades Técnicas</h2>
+        </div>
+
+        <!-- Bento Grid de Habilidades -->
+        <div class="skills-bento-grid">
+          
+          <!-- Bento 1: Frontend Moderno (Grande) -->
+          <div class="bento-card bento-wide glass-panel">
+            <div class="bento-header">
+              <span class="bento-icon">⚡</span>
+              <span class="bento-title" data-i18n="cat_frontend">Frontend Moderno</span>
+            </div>
+            <div class="bento-pills">
+              <span class="skill-chip"><span class="chip-dot"></span>React 19</span>
+              <span class="skill-chip"><span class="chip-dot"></span>TypeScript</span>
+              <span class="skill-chip"><span class="chip-dot"></span>Vite</span>
+              <span class="skill-chip"><span class="chip-dot"></span>React Router 6</span>
+              <span class="skill-chip"><span class="chip-dot"></span>TanStack Query</span>
+              <span class="skill-chip"><span class="chip-dot"></span>Zustand</span>
+              <span class="skill-chip"><span class="chip-dot"></span>React Hook Form + Zod</span>
+              <span class="skill-chip"><span class="chip-dot"></span>Tailwind / CSS Modules</span>
+              <span class="skill-chip"><span class="chip-dot"></span>Axios</span>
+              <span class="skill-chip"><span class="chip-dot"></span>Bootstrap</span>
+            </div>
+          </div>
+
+          <!-- Bento 2: Backend & Lenguajes (Grande) -->
+          <div class="bento-card bento-wide glass-panel">
+            <div class="bento-header">
+              <span class="bento-icon">⚙️</span>
+              <span class="bento-title" data-i18n="cat_backend">Backend & Lenguajes</span>
+            </div>
+            <div class="bento-pills">
+              <span class="skill-chip"><span class="chip-dot"></span>C# (.NET 8)</span>
+              <span class="skill-chip"><span class="chip-dot"></span>Blazor WebAssembly</span>
+              <span class="skill-chip"><span class="chip-dot"></span>JavaScript (ES6+)</span>
+              <span class="skill-chip"><span class="chip-dot"></span>Python</span>
+              <span class="skill-chip"><span class="chip-dot"></span>Java</span>
+              <span class="skill-chip"><span class="chip-dot"></span>Kotlin</span>
+              <span class="skill-chip"><span class="chip-dot"></span>Flask</span>
+              <span class="skill-chip"><span class="chip-dot"></span>Django</span>
+              <span class="skill-chip"><span class="chip-dot"></span>JWT Auth</span>
+            </div>
+          </div>
+
+          <!-- Bento 3: Bases de Datos -->
+          <div class="bento-card glass-panel">
+            <div class="bento-header">
+              <span class="bento-icon">🗄️</span>
+              <span class="bento-title" data-i18n="cat_database">Bases de Datos</span>
+            </div>
+            <div class="bento-pills">
+              <span class="skill-chip"><span class="chip-dot"></span>SQL Server</span>
+              <span class="skill-chip"><span class="chip-dot"></span>MySQL</span>
+              <span class="skill-chip"><span class="chip-dot"></span>MongoDB</span>
+              <span class="skill-chip"><span class="chip-dot"></span>CouchDB</span>
+            </div>
+          </div>
+
+          <!-- Bento 4: DevOps & IA -->
+          <div class="bento-card glass-panel">
+            <div class="bento-header">
+              <span class="bento-icon">🤖</span>
+              <span class="bento-title" data-i18n="cat_tools">DevOps & Herramientas</span>
+            </div>
+            <div class="bento-pills">
+              <span class="skill-chip"><span class="chip-dot"></span>Git & GitHub</span>
+              <span class="skill-chip"><span class="chip-dot"></span>Azure DevOps</span>
+              <span class="skill-chip"><span class="chip-dot"></span>Copilot AI Agents</span>
+              <span class="skill-chip"><span class="chip-dot"></span>Diagramas UML</span>
+              <span class="skill-chip"><span class="chip-dot"></span>Postman</span>
+            </div>
+          </div>
+
+          <!-- Bento 5: QA & Metodologías -->
+          <div class="bento-card glass-panel">
+            <div class="bento-header">
+              <span class="bento-icon">🛡️</span>
+              <span class="bento-title" data-i18n="cat_qa">QA & Metodologías</span>
+            </div>
+            <div class="bento-pills">
+              <span class="skill-chip"><span class="chip-dot"></span>Scrum / Ágil</span>
+              <span class="skill-chip"><span class="chip-dot"></span>Pruebas Funcionales QA</span>
+              <span class="skill-chip"><span class="chip-dot"></span>Matrices de Prueba</span>
+              <span class="skill-chip"><span class="chip-dot"></span>Historias de Usuario</span>
+              <span class="skill-chip"><span class="chip-dot"></span>CFDI 4.0</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECCIÓN 5: FORMACIÓN ACADÉMICA & CURSOS (2 COLUMNAS COMPACTAS) -->
+      <div class="grid-2-col" id="educacion">
+        
+        <!-- Columna 1: Educación -->
+        <section class="content-section">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <h2 class="section-title" data-i18n="section_education">Educación & Formación</h2>
+          </div>
+
+          <div class="education-cards">
+            <!-- Grado 1 -->
+            <div class="edu-card glass-panel">
+              <div class="edu-year" data-i18n="edu1_year">Ago 2024 – Abr 2026 (En curso)</div>
+              <h3 class="edu-degree" data-i18n="edu1_degree">Ingeniería en Desarrollo y Gestión de Software</h3>
+              <div class="edu-school" data-i18n="edu1_school">Universidad Tecnológica de León</div>
+            </div>
+
+            <!-- Grado 2 -->
+            <div class="edu-card glass-panel">
+              <div class="edu-year" data-i18n="edu2_year">Sep 2022 – Jul 2024</div>
+              <h3 class="edu-degree" data-i18n="edu2_degree">TSU en Desarrollo de Software Multiplataforma</h3>
+              <div class="edu-school" data-i18n="edu2_school">Universidad Tecnológica de León</div>
+            </div>
+
+            <!-- Grado 3 -->
+            <div class="edu-card glass-panel">
+              <div class="edu-year" data-i18n="edu3_year">2019 – 2022</div>
+              <h3 class="edu-degree" data-i18n="edu3_degree">Bachillerato Tecnológico en Programación</h3>
+              <div class="edu-school" data-i18n="edu3_school">CBTIS 225</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Columna 2: Cursos & Aptitudes -->
+        <section class="content-section" id="cursos">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+            </div>
+            <h2 class="section-title" data-i18n="section_courses">Cursos & Certificaciones</h2>
+          </div>
+
+          <div class="cert-list">
+            <div class="cert-card glass-panel">
+              <div class="cert-title" data-i18n="cert1_title">Cisco CCNA V1 & CCNA V2</div>
+              <p class="cert-desc" data-i18n="cert1_desc">Conectividad, topologías y configuración de redundancia en redes.</p>
+            </div>
+
+            <div class="cert-card glass-panel">
+              <div class="cert-title" data-i18n="cert2_title">Metodología SCRUM</div>
+              <p class="cert-desc" data-i18n="cert2_desc">Gestión ágil integral y entrega iterativa de proyectos de software.</p>
+            </div>
+
+            <div class="cert-card glass-panel">
+              <div class="cert-title" data-i18n="cert3_title">Inglés: Nivel B2</div>
+              <p class="cert-desc" data-i18n="cert3_desc">Conversaciones técnicas, lectura de documentación y redacción funcional.</p>
+            </div>
+
+            <!-- Aptitudes Blandas -->
+            <div class="soft-skills-card glass-panel">
+              <div class="soft-title" data-i18n="soft_title">Aptitudes & Valores</div>
+              <div class="soft-tags">
+                <span class="soft-pill" data-i18n="soft_1">Trabajo en Equipo</span>
+                <span class="soft-pill" data-i18n="soft_2">Escucha Activa</span>
+                <span class="soft-pill" data-i18n="soft_3">Trato Amable</span>
+                <span class="soft-pill" data-i18n="soft_4">Iniciativa & Proactividad</span>
+                <span class="soft-pill" data-i18n="soft_5">Resolución de Problemas</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
       </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-      <p data-i18n="footer_text">© 2026 Oscar Octavio Alvarado Cornejo • Desarrollador Junior & Analista QA</p>
-      <p class="footer-sub" data-i18n="footer_sub">Optimizado para visualización web responsive y exportación a PDF para reclutadores.</p>
-    </footer>
+      <!-- SECCIÓN 6: CALL TO ACTION / CONTACTO -->
+      <section class="cta-section glass-panel" id="contacto">
+        <div class="cta-content">
+          <h2 class="cta-title" data-i18n="cta_title">¿Interesado en colaborar o contratar?</h2>
+          <p class="cta-subtitle" data-i18n="cta_subtitle">Estoy listo para sumarme a tu equipo de desarrollo o control de calidad y aportar valor desde el primer día.</p>
+          
+          <div class="cta-actions">
+            <a href="mailto:oscarcornejo654@gmail.com" class="btn btn-primary btn-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <span data-i18n="cta_btn_email">Enviar Correo</span>
+            </a>
+            <button id="ctaPrintBtn" class="btn btn-secondary btn-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="cta_btn_pdf">Descargar CV en PDF</span>
+            </button>
+          </div>
+        </div>
+      </section>
 
-  </main>
+      <!-- FOOTER -->
+      <footer class="footer">
+        <p data-i18n="footer_text">© 2026 Oscar Octavio Alvarado Cornejo • Desarrollador Junior & Analista QA</p>
+        <p class="footer-sub" data-i18n="footer_sub">Optimizado para visualización web responsive y exportación a PDF para reclutadores.</p>
+      </footer>
+
+    </main>
+
+  </div>
 
   <!-- TOAST DE NOTIFICACIÓN -->
   <div id="toast" class="toast" role="alert" aria-live="polite">

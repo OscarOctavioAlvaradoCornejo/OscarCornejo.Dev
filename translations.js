@@ -12,7 +12,20 @@ const translations = {
     toast_lang_es: "Idioma cambiado a Español",
     toast_lang_en: "Language switched to English",
     toast_copy_email: "✓ Correo copiado al portapapeles",
-    toast_pdf_prep: "Preparando vista de impresión limpia para PDF...",
+    toast_download_pdf: "✓ Descargando CV en Español (PDF)...",
+
+    // Índice de Navegación Lateral (Sidebar)
+    nav_index_profile: "Perfil",
+    nav_index_exp: "Experiencia",
+    nav_index_skills: "Habilidades",
+    nav_index_edu: "Educación",
+    nav_index_contact: "Contacto",
+
+    // Botones de Acordeón / Desplegables
+    btn_expand_all: "Expandir Todo",
+    btn_collapse_all: "Contraer Todo",
+    btn_view_details: "Ver detalles",
+    btn_hide_details: "Ocultar detalles",
 
     // Hero / Perfil
     hero_status: "Disponible para nuevos retos & proyectos",
@@ -26,22 +39,23 @@ const translations = {
     hero_phone: "477-865-2117",
 
     // Métricas
-    metric_users_label: "Usuarios Activos en Timesheet (.NET 8 & Blazor)",
-    metric_tests_label: "Casos de Prueba Diseñados (HDI Seguros)",
-    metric_bugs_qa_label: "Bugs Reportados & Validados en QA",
-    metric_bugs_crm_label: "Bugs Críticos Resueltos en CRM (React 19)",
+    metric_users_label: "Usuarios en Timesheet (.NET 8)",
+    metric_tests_label: "Casos de Prueba (HDI Seguros)",
+    metric_bugs_qa_label: "Bugs Validados en QA",
+    metric_bugs_crm_label: "Bugs Resueltos en CRM",
 
     // Secciones
     section_experience: "Experiencia Profesional",
     section_skills: "Habilidades Técnicas",
-    section_education: "Educación",
+    section_education: "Educación & Formación",
     section_courses: "Cursos & Certificaciones",
 
     // Experiencia 1: Analista QA / Desarrollador
     exp1_title: "Analista QA / Desarrollador",
     exp1_company: "KSP Technologies",
-    exp1_date: "Febrero 2026 – Actualidad",
+    exp1_date: "Feb 2026 – Actualidad",
     exp1_type: "Remoto",
+    exp1_summary: "Desarrollo frontend en <span class=\"code-pill\">React 19 / TypeScript</span> para ERP CRM y creación integral del sistema Timesheet en <span class=\"code-pill\">.NET 8 / Blazor</span> con más de 200 usuarios activos y pruebas de software para HDI Seguros.",
     exp1_b1: "<strong>KSP Workspace (ERP & CRM):</strong> Resolvió al menos <span class=\"highlight-tag\">10 bugs críticos</span> en la plataforma ERP unificada de CRM y gestión de proyectos desarrollada con <span class=\"code-pill\">React 19</span>, <span class=\"code-pill\">TypeScript</span>, <span class=\"code-pill\">Vite</span> y <span class=\"code-pill\">React Router</span>, optimizando la estabilidad del módulo CRM en producción.",
     exp1_b2: "<strong>Gestión Ágil & Pruebas:</strong> Atendió 4 historias de usuario y ejecutó entre 16 y 20 tareas de análisis técnico, pruebas funcionales exhaustivas y validación de software.",
     exp1_b3: "<strong>Sistema Timesheet (.NET 8 & Blazor):</strong> Desarrolló e implementó de inicio a fin el sistema \"Timesheet\" con arquitectura <span class=\"code-pill\">.NET 8</span>, <span class=\"code-pill\">Blazor WebAssembly</span> y <span class=\"code-pill\">SQL Server</span>, adoptado exitosamente por más de <span class=\"highlight-tag\">200 usuarios</span> para el registro y auditoría de horas extra.",
@@ -51,27 +65,22 @@ const translations = {
     // Experiencia 2: Becario Analista KSP
     exp2_title: "Becario Analista de TI",
     exp2_company: "KSP Technologies",
-    exp2_date: "Marzo 2025 – Febrero 2026",
-    exp2_type: "Presencial · Jornada Parcial",
+    exp2_date: "Mar 2025 – Feb 2026",
+    exp2_type: "Presencial · Parcial",
+    exp2_summary: "Desarrollo de documentación técnica, análisis funcional y arquitectura base para proyectos de software empresarial.",
     exp2_b1: "Desarrolló documentación técnica y funcional para el análisis de proyectos de TI empresariales.",
     exp2_b2: "Sentó las bases de la base de conocimiento y arquitectura del producto, logrando una transición sobresaliente al rol titular de Analista QA / Desarrollador.",
 
     // Experiencia 3: Becario Municipio León
     exp3_title: "Becario Analista de TI",
-    exp3_company: "Municipio de León (Dirección de Tecnologías de la Información)",
-    exp3_date: "Mayo 2024 – Agosto 2024",
+    exp3_company: "Municipio de León (Dirección de TI)",
+    exp3_date: "May 2024 – Ago 2024",
     exp3_type: "Presencial · 4 meses",
+    exp3_summary: "Elaboración de matrices de riesgos, WBS, especificación formal de casos de uso y análisis normativo de CFDI 4.0.",
     exp3_b1: "Elaboró diagramas y documentos integrales de análisis: planes de trabajo, matrices de riesgos, matrices de requerimientos, WBS (Estructura de Desglose de Trabajo) y especificación formal de Casos de Uso.",
     exp3_b2: "Realizó el análisis detallado de requerimientos técnicos, legales y fiscales vinculados a la emisión y cancelación del esquema <span class=\"highlight-tag\">CFDI 4.0</span>, asegurando el cumplimiento institucional.",
 
-    // Filtros de Habilidades
-    filter_all: "Todas",
-    filter_frontend: "Frontend",
-    filter_backend: "Backend & Lenguajes",
-    filter_database: "Bases de Datos",
-    filter_tools: "DevOps & Herramientas",
-    filter_qa: "QA & Metodologías",
-
+    // Filtros & Categorías de Habilidades
     cat_frontend: "Frontend Moderno",
     cat_backend: "Backend & Lenguajes",
     cat_database: "Bases de Datos",
@@ -79,12 +88,12 @@ const translations = {
     cat_qa: "QA & Metodologías",
 
     // Educación
-    edu1_year: "Agosto 2024 – Abril 2026 (En curso)",
+    edu1_year: "Ago 2024 – Abr 2026 (En curso)",
     edu1_degree: "Ingeniería en Desarrollo y Gestión de Software",
     edu1_school: "Universidad Tecnológica de León",
 
-    edu2_year: "Septiembre 2022 – Julio 2024",
-    edu2_degree: "Técnico Superior Universitario en Desarrollo de Software Multiplataforma",
+    edu2_year: "Sep 2022 – Jul 2024",
+    edu2_degree: "TSU en Desarrollo de Software Multiplataforma",
     edu2_school: "Universidad Tecnológica de León",
 
     edu3_year: "2019 – 2022",
@@ -92,26 +101,26 @@ const translations = {
     edu3_school: "CBTIS 225",
 
     // Cursos & Certificaciones
-    cert1_title: "Curso de Redes Cisco CCNA V1 & CCNA V2",
-    cert1_desc: "Solución de problemas de conectividad, topologías y configuración de redundancia en redes.",
+    cert1_title: "Cisco CCNA V1 & CCNA V2",
+    cert1_desc: "Conectividad, topologías y configuración de redundancia en redes.",
 
-    cert2_title: "Curso de Metodología de Trabajo SCRUM",
-    cert2_desc: "Marco ágil para gestión integral y entrega iterativa de proyectos de software.",
+    cert2_title: "Metodología SCRUM",
+    cert2_desc: "Gestión ágil integral y entrega iterativa de proyectos de software.",
 
-    cert3_title: "Idioma: Inglés (Nivel Intermedio B2)",
-    cert3_desc: "Capacidad para mantener conversaciones técnicas, lectura de documentación y redacción funcional.",
+    cert3_title: "Inglés: Nivel B2",
+    cert3_desc: "Conversaciones técnicas, lectura de documentación y redacción funcional.",
 
     soft_title: "Aptitudes & Valores",
     soft_1: "Trabajo en Equipo",
-    soft_2: "Capacidad de Escucha Activa",
-    soft_3: "Trato Amable y Cercano",
-    soft_4: "Iniciativa y Proactividad",
+    soft_2: "Escucha Activa",
+    soft_3: "Trato Amable",
+    soft_4: "Iniciativa & Proactividad",
     soft_5: "Resolución de Problemas",
 
     // CTA & Footer
     cta_title: "¿Interesado en colaborar o contratar?",
     cta_subtitle: "Estoy listo para sumarme a tu equipo de desarrollo o control de calidad y aportar valor desde el primer día.",
-    cta_btn_email: "Enviar Correo Electrónico",
+    cta_btn_email: "Enviar Correo",
     cta_btn_pdf: "Descargar CV en PDF",
     footer_text: "© 2026 Oscar Octavio Alvarado Cornejo • Desarrollador Junior & Analista QA",
     footer_sub: "Optimizado para visualización web responsive y exportación a PDF para reclutadores."
@@ -125,7 +134,20 @@ const translations = {
     toast_lang_es: "Idioma cambiado a Español",
     toast_lang_en: "Language switched to English",
     toast_copy_email: "✓ Email copied to clipboard",
-    toast_pdf_prep: "Preparing clean print view for PDF...",
+    toast_download_pdf: "✓ Downloading Resume in English (PDF)...",
+
+    // Sidebar Navigation Index
+    nav_index_profile: "Profile",
+    nav_index_exp: "Experience",
+    nav_index_skills: "Skills",
+    nav_index_edu: "Education",
+    nav_index_contact: "Contact",
+
+    // Accordion / Collapsible Buttons
+    btn_expand_all: "Expand All",
+    btn_collapse_all: "Collapse All",
+    btn_view_details: "View details",
+    btn_hide_details: "Hide details",
 
     // Hero / Profile
     hero_status: "Available for new challenges & projects",
@@ -139,22 +161,23 @@ const translations = {
     hero_phone: "+52 477-865-2117",
 
     // Metrics
-    metric_users_label: "Active Users on Timesheet (.NET 8 & Blazor)",
-    metric_tests_label: "Test Cases Designed (HDI Seguros Collaboration)",
-    metric_bugs_qa_label: "Bugs Reported & Validated in QA",
-    metric_bugs_crm_label: "Critical Bugs Resolved in CRM (React 19)",
+    metric_users_label: "Users on Timesheet (.NET 8)",
+    metric_tests_label: "Test Cases (HDI Seguros)",
+    metric_bugs_qa_label: "Bugs Validated in QA",
+    metric_bugs_crm_label: "Bugs Resolved in CRM",
 
     // Sections
     section_experience: "Work Experience",
     section_skills: "Technical Skills",
-    section_education: "Education",
+    section_education: "Education & Training",
     section_courses: "Courses & Certifications",
 
     // Experience 1: QA Analyst / Developer
     exp1_title: "QA Analyst / Developer",
     exp1_company: "KSP Technologies",
-    exp1_date: "February 2026 – Present",
+    exp1_date: "Feb 2026 – Present",
     exp1_type: "Remote",
+    exp1_summary: "Frontend development in <span class=\"code-pill\">React 19 / TypeScript</span> for ERP CRM and end-to-end delivery of Timesheet system in <span class=\"code-pill\">.NET 8 / Blazor</span> with 200+ users and testing for HDI Seguros.",
     exp1_b1: "<strong>KSP Workspace (ERP & CRM):</strong> Resolved at least <span class=\"highlight-tag\">10 critical bugs</span> in the unified ERP CRM and project management platform built with <span class=\"code-pill\">React 19</span>, <span class=\"code-pill\">TypeScript</span>, <span class=\"code-pill\">Vite</span>, and <span class=\"code-pill\">React Router</span>, boosting production CRM module stability.",
     exp1_b2: "<strong>Agile Management & Testing:</strong> Handled 4 user stories and executed between 16 and 20 technical analysis tasks, exhaustive functional testing, and software quality validations.",
     exp1_b3: "<strong>Timesheet System (.NET 8 & Blazor):</strong> Built and deployed the end-to-end \"Timesheet\" application using <span class=\"code-pill\">.NET 8</span>, <span class=\"code-pill\">Blazor WebAssembly</span>, and <span class=\"code-pill\">SQL Server</span>, adopted by over <span class=\"highlight-tag\">200 active users</span> for overtime tracking and auditing.",
@@ -164,27 +187,22 @@ const translations = {
     // Experience 2: IT Analyst Intern KSP
     exp2_title: "IT Analyst Intern",
     exp2_company: "KSP Technologies",
-    exp2_date: "March 2025 – February 2026",
+    exp2_date: "Mar 2025 – Feb 2026",
     exp2_type: "On-site · Part-time",
+    exp2_summary: "Technical documentation, functional analysis, and foundational architecture for enterprise software projects.",
     exp2_b1: "Developed technical and functional documentation for enterprise IT project analysis.",
     exp2_b2: "Established foundational product knowledge and architecture documentation, driving a successful promotion to QA Analyst / Developer.",
 
     // Experience 3: IT Analyst Intern Municipio León
     exp3_title: "IT Analyst Intern",
-    exp3_company: "Municipality of León (Information Technology Directorate)",
-    exp3_date: "May 2024 – August 2024",
+    exp3_company: "Municipality of León (IT Directorate)",
+    exp3_date: "May 2024 – Aug 2024",
     exp3_type: "On-site · 4 months",
+    exp3_summary: "Development of risk matrices, WBS, use case specifications, and regulatory compliance analysis for CFDI 4.0.",
     exp3_b1: "Created comprehensive project analysis artifacts: work plans, risk matrices, requirement matrices, WBS (Work Breakdown Structure), and formal Use Case specifications.",
     exp3_b2: "Conducted detailed analysis of technical, legal, and fiscal requirements related to the <span class=\"highlight-tag\">CFDI 4.0</span> electronic invoicing schema, ensuring regulatory compliance.",
 
-    // Skills Filter
-    filter_all: "All",
-    filter_frontend: "Frontend",
-    filter_backend: "Backend & Languages",
-    filter_database: "Databases",
-    filter_tools: "DevOps & Tools",
-    filter_qa: "QA & Methodologies",
-
+    // Skills Filter & Categories
     cat_frontend: "Modern Frontend",
     cat_backend: "Backend & Languages",
     cat_database: "Databases",
@@ -192,11 +210,11 @@ const translations = {
     cat_qa: "QA & Methodologies",
 
     // Education
-    edu1_year: "August 2024 – April 2026 (In Progress)",
-    edu1_degree: "Bachelor of Engineering in Software Development and Management",
+    edu1_year: "Aug 2024 – Apr 2026 (In Progress)",
+    edu1_degree: "B.S. in Software Development and Management",
     edu1_school: "Universidad Tecnológica de León",
 
-    edu2_year: "September 2022 – July 2024",
+    edu2_year: "Sep 2022 – Jul 2024",
     edu2_degree: "Associate Degree (TSU) in Multiplatform Software Development",
     edu2_school: "Universidad Tecnológica de León",
 
@@ -205,26 +223,26 @@ const translations = {
     edu3_school: "CBTIS 225",
 
     // Courses & Certifications
-    cert1_title: "Cisco CCNA V1 & CCNA V2 Networking Course",
-    cert1_desc: "Network connectivity troubleshooting, network topologies, and routing redundancy configuration.",
+    cert1_title: "Cisco CCNA V1 & CCNA V2",
+    cert1_desc: "Network connectivity, topologies, and routing redundancy configuration.",
 
-    cert2_title: "SCRUM Project Management Methodology Course",
-    cert2_desc: "Agile framework for iterative software development, sprint planning, and delivery.",
+    cert2_title: "SCRUM Methodology",
+    cert2_desc: "Agile framework for iterative software development and delivery.",
 
-    cert3_title: "Language: English (Intermediate B2)",
-    cert3_desc: "Able to conduct technical discussions, comprehend engineering documentation, and write functional specs.",
+    cert3_title: "English: B2 Level",
+    cert3_desc: "Able to conduct technical discussions and comprehend documentation.",
 
     soft_title: "Key Soft Skills & Values",
     soft_1: "Team Collaboration",
     soft_2: "Active Listening",
-    soft_3: "Friendly & Approachable Demeanor",
+    soft_3: "Friendly Demeanor",
     soft_4: "Initiative & Proactivity",
-    soft_5: "Analytical Problem Solving",
+    soft_5: "Problem Solving",
 
     // CTA & Footer
     cta_title: "Interested in collaborating or hiring?",
     cta_subtitle: "I am ready to join your engineering or QA team and deliver value from day one.",
-    cta_btn_email: "Send an Email",
+    cta_btn_email: "Send Email",
     cta_btn_pdf: "Download Resume (PDF)",
     footer_text: "© 2026 Oscar Octavio Alvarado Cornejo • Junior Developer & QA Analyst",
     footer_sub: "Optimized for responsive web viewing and clean PDF export for recruiters."
